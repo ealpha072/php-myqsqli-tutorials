@@ -33,7 +33,10 @@
         email VARCHAR(50) NOT NULL,
         red_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
     )";*/
-/*firt is datatype then other optional atributes for each created column...notnull-null values not allowed, default value-set default value when none is given: unsigned-used for number types,limits stored data to positives and zero:auto-increment-auto increases with each entry..*/
+/*firt is datatype then other optional atributes for each created column...
+notnull-null values not allowed, default value-set default value when none is given: 
+unsigned-used for number types,limits stored data to positives and zero:
+auto-increment-auto increases with each entry..*/
     
     /*if(mysqli_query($conn,$sql)){
         //the mysqli_query is used to create an sql query, has two param,the connection and the query..
@@ -94,7 +97,7 @@
                 echo "id: ".$row["id"]."-Name:". $row["firstname"]. " ". $row["lastname"]. "<br>";
             }
         }else{
-                echo "No results found";
+                echo "No results";
         }
 
 
