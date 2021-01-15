@@ -14,48 +14,48 @@
     //echo "Connection successfull";
 
     //create a database
-    /*$db = "CREATE DATABASE myDB";
+    $db = "CREATE DATABASE myDB";
     if(mysqli_query($conn,$db)){
         //the mysqli_query is used to create an sql query, has two param,the connection and the query..
         echo "Database created";
     }else{
         echo "Error creating database: ".mysqli_error($conn);
-    }*/
+    }
 
 
     // create a table;
 
-    /*$sql = "CREATE TABLE MyGuests
+    $sql = "CREATE TABLE MyGuests
     (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         firstname VARCHAR(30) NOT NULL,
         lastname VARCHAR(30) NOT NULL,
         email VARCHAR(50) NOT NULL,
         red_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-    )";*/
+    )";
 /*firt is datatype then other optional atributes for each created column...
 notnull-null values not allowed, default value-set default value when none is given: 
 unsigned-used for number types,limits stored data to positives and zero:
 auto-increment-auto increases with each entry..*/
     
-    /*if(mysqli_query($conn,$sql)){
+    if(mysqli_query($conn,$sql)){
         //the mysqli_query is used to create an sql query, has two param,the connection and the query..
         echo "Table created successfully";
     }else{
         echo "Error creating table: ".mysqli_error($conn);
-    }*/
+    }
     //adding data t table
     //$data = "INSERT INTO MyGuests(firstname,lastname,email) VALUES('Alpha','Emm','ealpha072@gmail.com')";
 
 
-    /*if(mysqli_query($conn,$data)){
+    if(mysqli_query($conn,$data)){
         //the mysqli_query is used to create an sql query, has two param,the connection and the query..
         echo "New record created";
     }else{
         echo "Error: " . $data . "<br>" . mysqli_error($conn);
-    }*/
+    }
     //for multiple queries;
-    /*$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+    $sql = "INSERT INTO MyGuests (firstname, lastname, email)
     VALUES ('John', 'Doe', 'john@example.com');";
     $sql .= "INSERT INTO MyGuests (firstname, lastname, email)
     VALUES ('Mary', 'Moe', 'mary@example.com');";
@@ -66,11 +66,11 @@ auto-increment-auto increases with each entry..*/
         echo "New records created";
     }else{
         echo "Error. ". $sql. "<br>" . mysql_error($conn);
-    }*/
+    }
 
     //with prepared statements
         //prepare and bind;
-        /*$stmt = $conn->prepare("INSERT INTO MyGuests(firstname,lastname,email)VALUES(?,?,?)");
+        $stmt = $conn->prepare("INSERT INTO MyGuests(firstname,lastname,email)VALUES(?,?,?)");
         //BIND
         $stmt->bind_param("sss",$firstname,$lastname,$email);//this function binds the parameters to the sql query and tells the db what the parameters are,sss specifies type of data:one s for ech type,s-string,i-interger,d-double,b-BLOB
         //set parameters and execute;
